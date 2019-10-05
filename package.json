@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/amirsaeed671/custom-react-app/issues"
   },
-  "homepage": "https://github.com/amirsaeed671/custom-react-app#readme"
+  "homepage": "https://github.com/amirsaeed671/custom-react-app#readme",
+  "dependencies": {
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  }
 }
