@@ -20,5 +20,8 @@
   "dependencies": {
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
   }
 }
