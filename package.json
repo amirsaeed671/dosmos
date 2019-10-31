@@ -1,22 +1,22 @@
 {
-  "name": "custom-react-app",
+  "name": "dosmos",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "parcel public/index.html"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amirsaeed671/custom-react-app.git"
+    "url": "git+https://github.com/amirsaeed671/dosmos.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/amirsaeed671/custom-react-app/issues"
+    "url": "https://github.com/amirsaeed671/dosmos/issues"
   },
-  "homepage": "https://github.com/amirsaeed671/custom-react-app#readme",
+  "homepage": "https://github.com/amirsaeed671/dosmos#readme",
   "dependencies": {
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
