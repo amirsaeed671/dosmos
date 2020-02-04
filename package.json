@@ -20,6 +20,7 @@
   "homepage": "https://github.com/amirsaeed671/dosmos#readme",
   "dependencies": {
     "axios": "^0.19.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
@@ -29,17 +30,33 @@
     "@babel/preset-react": "^7.8.3",
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^9.4.0",
+    "babel-eslint": "^10.0.3",
     "babel-jest": "^25.1.0",
     "babel-plugin-transform-es2015-destructuring": "^6.23.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-react": "^7.18.3",
     "husky": "^4.2.1",
     "jest": "^25.1.0",
-    "parcel-bundler": "^1.12.4"
+    "lint-staged": "^10.0.7",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test",
-      "pre-push": "npm test"
+      "pre-commit": "npm test && lint-staged",
+      "pre-push": "npm test && lint-staged"
     }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "eslint",
+      "pretty-quick — staged",
+      "git add"
+    ]
   }
 }
