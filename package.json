@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel public/index.html",
-    "test": "jest"
+    "dev": "parcel public/index.html --open",
+    "test": "jest",
+    "format": "prettier --write \"src/**/*.{js,jsx}\""
   },
   "repository": {
     "type": "git",
