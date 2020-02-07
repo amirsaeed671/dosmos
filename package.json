@@ -5,15 +5,24 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel public/index.html --open",
-    "test": "jest --watch",
+    "test:watch": "jest --watch",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
-    "format": "prettier --write \"src/**/*.{js,jsx}\""
+    "cypress:open": "cypress open",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "build": "parcel build index.html",
+    "predeploy": "parcel build index.html --public-url /dosmos",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/amirsaeed671/dosmos.git"
   },
-  "keywords": ["dosmos", "nasa", "apis", "open"],
+  "keywords": [
+    "dosmos",
+    "nasa",
+    "apis",
+    "open"
+  ],
   "author": "Amir Ali",
   "license": "ISC",
   "bugs": {
@@ -24,7 +33,8 @@
     "axios": "^0.19.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-router": "^5.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -36,11 +46,13 @@
     "babel-jest": "^25.1.0",
     "babel-plugin-transform-es2015-destructuring": "^6.23.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "cypress": "^4.0.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-react": "^7.18.3",
+    "gh-pages": "^2.2.0",
     "husky": "^4.2.1",
     "jest": "^25.1.0",
     "lint-staged": "^10.0.7",
