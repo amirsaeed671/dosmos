@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel public/index.html --open",
-    "test": "jest",
+    "start": "parcel public/index.html --open",
+    "test": "jest --watch",
+    "lint": "eslint \"src/**/*.{js,jsx}\"",
     "format": "prettier --write \"src/**/*.{js,jsx}\""
   },
   "repository": {
@@ -13,7 +14,7 @@
     "url": "git+https://github.com/amirsaeed671/dosmos.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Amir Ali",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/amirsaeed671/dosmos/issues"
@@ -49,8 +50,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test && lint-staged",
-      "pre-push": "npm test && lint-staged"
+      "pre-commit": "jest && lint-staged",
+      "pre-push": "jest && lint-staged"
     }
   },
   "lint-staged": {
