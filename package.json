@@ -6,6 +6,7 @@
   "scripts": {
     "start": "parcel public/index.html --open",
     "test:watch": "jest --watch",
+    "test": "jest src/",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "cypress:open": "cypress open",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
@@ -62,8 +63,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "jest && lint-staged",
-      "pre-push": "jest && lint-staged"
+      "pre-commit": "npm run test && lint-staged",
+      "pre-push": "npm run test && lint-staged"
     }
   },
   "lint-staged": {
