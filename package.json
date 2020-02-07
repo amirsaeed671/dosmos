@@ -1,7 +1,7 @@
 {
   "name": "dosmos",
   "version": "1.0.0",
-  "description": "",
+  "description": "a react application to display the data from nasa's open api's",
   "main": "index.js",
   "scripts": {
     "start": "parcel public/index.html --open",
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/amirsaeed671/dosmos.git"
   },
-  "keywords": [],
+  "keywords": ["dosmos", "nasa", "apis", "open"],
   "author": "Amir Ali",
   "license": "ISC",
   "bugs": {
