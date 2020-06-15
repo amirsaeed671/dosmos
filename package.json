@@ -4,14 +4,13 @@
   "description": "a react application to display the data from nasa's open api's",
   "main": "index.js",
   "scripts": {
-    "start": "parcel public/index.html --open",
+    "dev": "npm run webpack-dev-server -- --mode development --hot",
+    "prod": "npm run webpack -- --mode production",
+    "webpack-dev-server": "webpack-dev-server",
+    "webpack": "webpack",
     "test:watch": "jest --watch",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
-    "cypress:open": "cypress open",
-    "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "build": "parcel build index.html",
-    "predeploy": "parcel build index.html --public-url /dosmos",
-    "deploy": "gh-pages -d dist"
+    "format": "prettier --write \"src/**/*.{js,jsx}\""
   },
   "repository": {
     "type": "git",
@@ -44,21 +43,29 @@
     "@testing-library/react": "^9.4.0",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^25.1.0",
+    "babel-loader": "^8.1.0",
     "babel-plugin-transform-es2015-destructuring": "^6.23.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "cypress": "^4.0.0",
+    "css-loader": "^3.6.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-react": "^7.18.3",
     "gh-pages": "^2.2.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
     "husky": "^4.2.1",
     "jest": "^25.1.0",
     "lint-staged": "^10.0.7",
-    "parcel-bundler": "^1.12.4",
+    "mini-css-extract-plugin": "^0.9.0",
     "prettier": "^1.19.1",
-    "pretty-quick": "^2.0.1"
+    "pretty-quick": "^2.0.1",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^4.2.2"
   },
   "husky": {
     "hooks": {
