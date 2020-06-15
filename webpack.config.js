@@ -8,6 +8,7 @@ const presetsConfig = require('./build-utils/loadPresets');
 module.exports = ({mode, presets} = {mode: 'production', presets: [] }) => {
     return webpackMerge(
         {
+            mode,
             entry: './src/index.js',
             output: {
                 filename: 'bundle.js',
@@ -15,6 +16,15 @@ module.exports = ({mode, presets} = {mode: 'production', presets: [] }) => {
             },
             module: {
                 rules: [
+                    {
+                        test: /\.jpe?g$/,
+                        use: {
+                            loader: 'url-loader',
+                            options: {
+                                limit: 5000,
+                            }
+                        }
+                    },
                     {
                         test: /\.js$/,
                         use: {
