@@ -5,6 +5,9 @@ module.exports = {
   moduleDirectories: [
     'node_modules',
     path.join(__dirname, '../src'),
+    'common',
+    'auth',
+    'main',
     path.join(__dirname),
   ],
   moduleNameMapper: {
