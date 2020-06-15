@@ -15,7 +15,7 @@ module.exports = ({mode, presets} = {mode: 'production', presets: [] }) => {
                 path: path.resolve(__dirname, 'docs')
             },
             resolve: {
-                modules: ['node_modules', path.join(__dirname, 'src')],
+                modules: ['node_modules', path.join(__dirname, 'src'), 'common', 'auth', 'main'],
             },
             module: {
                 rules: [
