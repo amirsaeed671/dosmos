@@ -62,6 +62,7 @@
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
     "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0",
