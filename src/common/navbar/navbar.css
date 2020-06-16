@@ -1,0 +1,19 @@
+.navbar {
+    background-color: #1E5162;
+    height: 4em;
+    color: #fff;
+}
+
+.navbar-list-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar-list-item {
+    font-size: 1em;
+    text-decoration: none;
+    color: #fff;
+    margin-left: 1.5em;
+}
