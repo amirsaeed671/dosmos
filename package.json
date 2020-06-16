@@ -87,7 +87,7 @@
     "src/**/*.{js,jsx}": [
       "prettier",
       "jest --findRelatedTests",
-      "git add"
+      "git add . && git commit -m 'build updated'"
     ]
   }
 }

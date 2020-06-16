@@ -21,12 +21,12 @@ const Form = ({onSubmit}) => {
 
     return (
         <form className="form" autoComplete="on" aria-labelledby="form" onSubmit={handleSubmit}>
-            <h1>Login</h1>
+            <h1>Signup</h1>
             <input type="text" autoComplete="on" required value={username} onChange={handleUsernameChange} data-testid="username" id="username" name="username" aria-labelledby="username" placeholder="Username"/>
             <input type="password" autoComplete="on" required value={password} onChange={handlePasswordChange} data-testid="password" id="password" name="password" aria-labelledby="password" placeholder="Password"/>
             <div>
-                <button className="button button-primary" type="submit" aria-labelledby="submit" data-testid="submit-button">Login</button>
-                <Link aria-labelledby="signup" className="button button-secondary" to="signup" data-testid="signup-button">Signup</Link>
+                <button className="button button-primary" type="submit" aria-labelledby="submit" data-testid="submit-button">Signup</button>
+                <Link aria-labelledby="back-to-login" to="login" data-testid="back-to-login">Back to Login</Link>
             </div>
         </form>
     );
