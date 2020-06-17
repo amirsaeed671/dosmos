@@ -44,7 +44,7 @@ module.exports = ({mode, presets} = {mode: 'production', presets: [] }) => {
             },
             plugins: [
                 new HtmlWebpackPlugin({
-                    template: path.resolve(__dirname, 'public/index.html'),
+                    template: './public/index.html',
                     filename: 'index.html',
                 })
             ]
