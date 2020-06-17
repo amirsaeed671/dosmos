@@ -77,6 +77,10 @@
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.2.2"
   },
+  "engines": {
+    "node": "13.x",
+    "yarn": "1.x"
+  },
   "jest-runner-eslint": {
     "cliOptions": {
       "ignorePath": "./.gitignore"
