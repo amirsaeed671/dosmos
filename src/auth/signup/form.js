@@ -26,7 +26,7 @@ const Form = ({onSubmit}) => {
             <input type="password" autoComplete="on" required value={password} onChange={handlePasswordChange} data-testid="password" id="password" name="password" aria-labelledby="password" placeholder="Password"/>
             <div>
                 <button className="button button-primary" type="submit" aria-labelledby="submit" data-testid="submit-button">Signup</button>
-                <Link aria-labelledby="back-to-login" to="login" data-testid="back-to-login">Back to Login</Link>
+                <Link aria-labelledby="back-to-login" to="/" data-testid="back-to-login">Back to Login</Link>
             </div>
         </form>
     );
