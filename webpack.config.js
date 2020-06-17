@@ -9,7 +9,7 @@ module.exports = ({mode, presets} = {mode: 'production', presets: [] }) => {
     return webpackMerge(
         {
             mode,
-            entry: './src/index.js',
+            entry: path.resolve(__dirname, 'src') + '/index.js',
             output: {
                 filename: 'bundle.js',
                 path: path.resolve(__dirname, 'dist')
