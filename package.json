@@ -13,8 +13,7 @@
     "test:coverage": "jest --coverage",
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
     "lint": "jest --config test/jest.lint.js",
-    "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "heroku-postbuild": "pwd && ls -la && yarn run prod"
+    "format": "prettier --write \"src/**/*.{js,jsx}\""
   },
   "repository": {
     "type": "git",
@@ -83,7 +82,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && yarn run prod"
     }
   },
   "lint-staged": {
