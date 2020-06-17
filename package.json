@@ -4,7 +4,8 @@
   "description": "a react application to display the data from nasa's open api's",
   "main": "index.js",
   "scripts": {
-    "dev": "yarn run webpack-dev-server --env.mode development --hot",
+    "start": "node server.js",
+    "dev": "yarn run webpack-dev-server --env.mode development --hot --open",
     "prod": "yarn run webpack --env.mode production",
     "webpack-dev-server": "webpack-dev-server",
     "webpack": "webpack",
@@ -12,7 +13,8 @@
     "test:coverage": "jest --coverage",
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
     "lint": "jest --config test/jest.lint.js",
-    "format": "prettier --write \"src/**/*.{js,jsx}\""
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "heroku-postbuild": "yarn run prod"
   },
   "repository": {
     "type": "git",
@@ -86,8 +88,7 @@
   "lint-staged": {
     "src/**/*.{js,jsx}": [
       "prettier",
-      "jest --findRelatedTests",
-      "git add . && git commit -m 'build updated'"
+      "jest --findRelatedTests"
     ]
   }
 }
