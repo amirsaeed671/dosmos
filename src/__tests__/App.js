@@ -1,3 +1,3 @@
 test('should render hello', () => {
-    expect(true).toBeTruthy();
-});
+  expect(true).toBeTruthy()
+})
