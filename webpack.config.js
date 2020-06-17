@@ -12,7 +12,7 @@ module.exports = ({mode, presets} = {mode: 'production', presets: [] }) => {
             resolve: {
                 modules: ['node_modules', path.join(__dirname, 'src'), 'common', 'auth', 'main'],
             },
-            entry: './src/index.js',
+            entry: 'index.js',
             output: {
                 filename: 'app-bundle.js',
                 path: path.resolve(__dirname, 'dist'),
@@ -44,7 +44,7 @@ module.exports = ({mode, presets} = {mode: 'production', presets: [] }) => {
             },
             plugins: [
                 new HtmlWebpackPlugin({
-                    template: './public/index.html',
+                    template: path.resolve(__dirname, 'public/index.html'),
                     filename: 'index.html',
                 })
             ]
