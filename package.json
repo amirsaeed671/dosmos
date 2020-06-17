@@ -14,7 +14,7 @@
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
     "lint": "jest --config test/jest.lint.js",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "heroku-postbuild": "webpack -p"
+    "heroku-postbuild": "ls -la && pwd && yarn run prod"
 
   },
   "repository": {
@@ -81,6 +81,7 @@
     "node": "13.x",
     "yarn": "1.x"
   },
+  "cacheDirectories": ["data"],
   "jest-runner-eslint": {
     "cliOptions": {
       "ignorePath": "./.gitignore"
