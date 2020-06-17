@@ -5,6 +5,6 @@
         "*": ["src/*", "src/shared/*", "test/*"]
       }
     },
-    "include": ["src", "test/*"]
-  }
+    "include": ["src", "test/*", "server.js"]
+}
   

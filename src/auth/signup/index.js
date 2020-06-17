@@ -9,7 +9,7 @@ import Form from './form';
 const Signup = ({history}) => {
 
     const handleSubmit = ({username, password}) => {  
-        history.push('/login');
+        history.push('/');
     };
 
     return (
