@@ -14,7 +14,7 @@
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
     "lint": "jest --config test/jest.lint.js",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "heroku-postbuild": "ls -la && pwd && npx webpack --env.mode production"
+    "heroku-postbuild": "ls -la && pwd && yes | npx webpack --env.mode production"
 
   },
   "repository": {
