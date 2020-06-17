@@ -83,7 +83,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && yarn run prod"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
