@@ -1,0 +1,118 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding:0;
+}
+.login {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+#username, #password {
+    min-width: 280px;
+    padding: 8px 12px;
+    margin-bottom: 1em;
+    border: 2px solid #e3e3e3;
+}
+
+.button {
+    text-decoration: none;
+    padding: 8px 16px;
+    margin-right: 1em;
+    font-size: 1em;
+    border: none;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button-primary {
+    background-color: #ADD8E6;
+}
+
+.button-secondary {
+    background-color: #1E5162;
+    color: white;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 90%;
+    padding: 0 5%;
+    height: 100%;
+}
+.signup {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+#username, #password {
+    min-width: 280px;
+    padding: 8px 12px;
+    margin-bottom: 1em;
+    border: 2px solid #e3e3e3;
+}
+
+.button {
+    text-decoration: none;
+    padding: 8px 16px;
+    margin-right: 1em;
+    font-size: 1em;
+    border: none;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button-primary {
+    background-color: #ADD8E6;
+}
+
+.button-secondary {
+    background-color: #1E5162;
+    color: white;
+}
+
+.navbar {
+    background-color: #1E5162;
+    height: 4em;
+    color: #fff;
+}
+
+.navbar-list-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar-list-item {
+    font-size: 1em;
+    text-decoration: none;
+    color: #fff;
+    margin-left: 1.5em;
+}
