@@ -12,7 +12,7 @@ module.exports = ({mode, presets} = {mode: 'production', presets: [] }) => {
             resolve: {
                 modules: ['node_modules', path.join(__dirname, 'src'), 'common', 'auth', 'main'],
             },
-            entry: path.resolve(__dirname, 'src/index.js'),
+            entry: './src/index.js',
             output: {
                 filename: 'app-bundle.js',
                 path: path.resolve(__dirname, 'dist'),
