@@ -78,8 +78,8 @@
     "webpack-merge": "^4.2.2"
   },
   "engines": {
-    "node": "13.x",
-    "yarn": "1.x"
+    "node": "13.10.1",
+    "yarn": "1.22.4"
   },
   "jest-runner-eslint": {
     "cliOptions": {
