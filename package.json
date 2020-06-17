@@ -13,9 +13,7 @@
     "test:coverage": "jest --coverage",
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
     "lint": "jest --config test/jest.lint.js",
-    "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "preinstall": "pwd && ls -la",
-    "postinstall": "chmod -R +x ./src/index.js && yarn run prod"
+    "format": "prettier --write \"src/**/*.{js,jsx}\""
   },
   "repository": {
     "type": "git",
