@@ -9,6 +9,7 @@ module.exports = {
     ],
     rules: {
         'import/named': 'off',
+        'import/no-cycle': 'off',
     },
     settings: {
         'import/resolver': 'node',

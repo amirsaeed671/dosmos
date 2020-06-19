@@ -8,6 +8,8 @@ module.exports = {
     'common',
     'auth',
     'main',
+    'utils',
+    'utils/endpoints',
     path.join(__dirname),
   ],
   moduleNameMapper: {
