@@ -22,6 +22,7 @@ const App = () => {
   ) => {
     const notification = notificationSystem.current
     notification.addNotification({
+      autoDismiss: 3,
       message,
       level,
     })
