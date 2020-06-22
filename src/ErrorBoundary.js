@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import Container from 'common/container'
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -15,16 +16,17 @@ class ErrorBoundary extends Component {
   }
 
   render() {
-    if (this.state.errorInfo) {
+    const {errorInfo, error} = this.state
+    if (errorInfo) {
       return (
-        <div>
-          <h2>Something went wrong.</h2>
+        <Container>
+          <h1>Something went wrong.</h1>
           <details style={{whiteSpace: 'pre-wrap'}}>
-            {this.state.error && this.state.error.toString()}
+            {error && error.toString()}
             <br />
-            {this.state.errorInfo.componentStack}
+            {errorInfo.componentStack}
           </details>
-        </div>
+        </Container>
       )
     }
     return this.props.children
