@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {getUser, isLoggedIn} from 'auth'
 
-const baseURL = process.env.BASE_URL
+const baseURL = process.env.REACT_APP_BASE_URL
 
 const axiosInstance = axios.create({baseURL})
 
@@ -20,7 +20,7 @@ axiosInstance.interceptors.request.use(
 
 axiosInstance.interceptors.response.use(
   function responseCB(response = {}) {
-    return Promise.resolve(response.data)
+    return response.data
   },
   function resErrorCB(error) {
     return Promise.reject(error)

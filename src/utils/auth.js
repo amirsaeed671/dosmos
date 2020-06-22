@@ -1,27 +1,18 @@
-import UserService from 'user'
+const getUser = () => {
+  return sessionStorage.getItem('token')
+}
 
-const isLoggedIn = async () => {
-  const user = await UserService.profile()
-  return !!user
+const isLoggedIn = () => {
+  const token = getUser()
+  return !!token
 }
 
 const setUser = token => {
-  localStorage.setItem('token', token)
-}
-
-const getUser = () => {
-  return localStorage.getItem('token')
+  sessionStorage.setItem('token', token)
 }
 
 const removeUser = () => {
-  localStorage.removeItem('token')
+  sessionStorage.removeItem('token')
 }
 
-const auth = {
-  isLoggedIn,
-  setUser,
-  getUser,
-  removeUser,
-}
-
-export {auth}
+export {isLoggedIn, setUser, getUser, removeUser}

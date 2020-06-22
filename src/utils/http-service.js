@@ -1,7 +1,7 @@
 import axiosInstance from 'api'
 
-const get = (endpoint, data, config = {}) => {
-  return axiosInstance.get(endpoint, {params: data, ...config})
+const get = (endpoint, data = {}, config = {}) => {
+  return axiosInstance.get(endpoint, {params: data, ...(config || {})})
 }
 
 const post = (endpoint, data, config = {}) => {
