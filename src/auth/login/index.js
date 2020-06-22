@@ -25,7 +25,7 @@ const Login = ({history}) => {
           history.push('home')
         }),
         catchError(err => {
-          addNotification(err.toJSON().message, 'warning')
+          addNotification(err.toJSON().message, 'error')
         }),
       )
       .subscribe()

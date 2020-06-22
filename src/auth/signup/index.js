@@ -18,14 +18,14 @@ const Signup = ({history}) => {
         tap(response => {
           addNotification(response.message)
         }),
-        takeWhile(({status}) => status === 200),
+        takeWhile(({status}) => status === 201),
         pluck('data', 'token'),
         tap(token => {
           setUser(token)
           history.push('home')
         }),
         catchError(err => {
-          addNotification(err.toJSON().message, 'warning')
+          addNotification(err.toJSON().message, 'error')
         }),
       )
       .subscribe()
