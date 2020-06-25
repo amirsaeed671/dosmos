@@ -8,3 +8,8 @@ html, body, #root {
     margin: 0;
     padding:0;
 }
+
+label {
+    font-size: 0.8em;
+    margin-bottom: 0.4em;
+}

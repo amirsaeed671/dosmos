@@ -1,40 +1,37 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import Proptypes from 'prop-types'
 import {withRouter} from 'react-router-dom'
 import './login.css'
 import Container from 'common/container'
 import UserService from 'user'
 import {setUser} from 'auth'
-import {from} from 'rxjs'
-import {tap, catchError, pluck, takeWhile} from 'rxjs/operators'
 import Notification from 'notification-provider'
 import Form from './form'
+import {loginObservable} from './observables'
 
 const Login = ({history}) => {
+  const [loader, setLoader] = useState(false)
   const {addNotification} = useContext(Notification)
+  const observer = {
+    next: ({message, token}) => {
+      setUser(token)
+      addNotification(message, 'success')
+      history.push('home')
+    },
+    error: err => {
+      addNotification(err.message, 'error')
+      setLoader(false)
+    },
+  }
   const handleSubmit = (data = {username: '', password: ''}) => {
-    from(UserService.login(data))
-      .pipe(
-        tap(response => {
-          addNotification(response.message, 'success')
-        }),
-        takeWhile(({status}) => status === 200),
-        pluck('data', 'token'),
-        tap(token => {
-          setUser(token)
-          history.push('home')
-        }),
-        catchError(err => {
-          addNotification(err.toJSON().message, 'error')
-        }),
-      )
-      .subscribe()
+    setLoader(true)
+    loginObservable(UserService.login(data)).subscribe(observer)
   }
 
   return (
     <Container>
       <div className="login">
-        <Form onSubmit={handleSubmit} />
+        <Form loader={loader} onSubmit={handleSubmit} />
       </div>
     </Container>
   )
