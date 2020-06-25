@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Proptypes from 'prop-types'
 import {Link} from 'react-router-dom'
 
-const Form = ({onSubmit}) => {
+const Form = ({onSubmit, loader}) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
@@ -20,13 +20,9 @@ const Form = ({onSubmit}) => {
   }
 
   return (
-    <form
-      className="form"
-      autoComplete="on"
-      aria-labelledby="form"
-      onSubmit={handleSubmit}
-    >
+    <form className="form" autoComplete="on" onSubmit={handleSubmit}>
       <h1>Signup</h1>
+      <label htmlFor="username">Username</label>
       <input
         type="text"
         autoComplete="on"
@@ -37,8 +33,9 @@ const Form = ({onSubmit}) => {
         id="username"
         name="username"
         aria-labelledby="username"
-        placeholder="Username"
+        placeholder="Enter your username"
       />
+      <label htmlFor="password">Password</label>
       <input
         type="password"
         autoComplete="on"
@@ -49,22 +46,19 @@ const Form = ({onSubmit}) => {
         id="password"
         name="password"
         aria-labelledby="password"
-        placeholder="Password"
+        placeholder="Enter your password"
       />
       <div>
         <button
           className="button button-primary"
           type="submit"
-          aria-labelledby="submit"
+          role="button"
+          disabled={loader}
           data-testid="submit-button"
         >
           Signup
         </button>
-        <Link
-          aria-labelledby="back-to-login"
-          to="/"
-          data-testid="back-to-login"
-        >
+        <Link to="/" disabled={loader} data-testid="back-to-login">
           Back to Login
         </Link>
       </div>
@@ -74,6 +68,11 @@ const Form = ({onSubmit}) => {
 
 Form.propTypes = {
   onSubmit: Proptypes.func.isRequired,
+  loader: Proptypes.bool,
+}
+
+Form.defaultProps = {
+  loader: false,
 }
 
 export default Form

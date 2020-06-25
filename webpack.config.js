@@ -10,7 +10,7 @@ module.exports = ({mode, presets} = {mode: 'production', presets: [] }) => {
         {
             mode,
             resolve: {
-                modules: ['node_modules', path.join(__dirname, 'src'), 'common', 'auth', 'main', 'utils', 'utils/endpoints'],
+                modules: ['node_modules', 'test', path.join(__dirname, 'src'), 'common', 'auth', 'main', 'utils', 'utils/endpoints'],
             },
             entry: './src/Index.js',
             output: {
