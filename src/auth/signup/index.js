@@ -17,6 +17,7 @@ const Signup = ({history}) => {
       addNotification(message, 'success')
       setUser(token)
       history.push('home')
+      setLoader(false)
     },
     error: err => {
       addNotification(err, 'error')

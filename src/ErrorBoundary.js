@@ -20,8 +20,8 @@ class ErrorBoundary extends Component {
     if (errorInfo) {
       return (
         <Container>
-          <h1>Something went wrong.</h1>
-          <details style={{whiteSpace: 'pre-wrap'}}>
+          <h1 role="alert">Something went wrong.</h1>
+          <details data-testid="error" style={{whiteSpace: 'pre-wrap'}}>
             {error && error.toString()}
             <br />
             {errorInfo.componentStack}
