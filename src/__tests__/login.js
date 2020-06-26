@@ -27,7 +27,7 @@ test('it should handle the resonse of the api', async () => {
     message: 'User logged in',
     status: 200,
   })
-  const {getByLabelText, getByTestId} = render(<Login />)
+  const {getByLabelText, getByTestId, findByRole} = render(<Login />)
   const usernameInput = getByLabelText(/username/i)
   const passwordInput = getByLabelText(/password/i)
   const submitButton = getByTestId('submit-button')
@@ -35,9 +35,12 @@ test('it should handle the resonse of the api', async () => {
   await userEvent.type(usernameInput, 'abid')
   await userEvent.type(passwordInput, '12345678')
 
-  await userEvent.click(submitButton)
+  userEvent.click(submitButton)
 
   expect(submitButton).toBeDisabled()
+  // checking button to be enabled after api response comes
+  const button = await findByRole('button')
+  expect(button).not.toBeDisabled()
   expect(UserService.login).toHaveBeenCalledWith({
     username: 'abid',
     password: '12345678',

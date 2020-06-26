@@ -22,15 +22,17 @@ test('it should handle the resonse of the api', async () => {
     status: 201,
   })
 
-  const {getByLabelText, getByRole} = render(<Signup />)
+  const {getByLabelText, getByRole, findByRole} = render(<Signup />)
   const usernameInput = getByLabelText(/username/i)
   const passwordInput = getByLabelText(/password/i)
 
   await userEvent.type(usernameInput, 'abid')
   await userEvent.type(passwordInput, '12345678')
 
-  await userEvent.click(getByRole('button'))
+  userEvent.click(getByRole('button'))
   expect(getByRole('button')).toBeDisabled()
+  const button = await findByRole('button')
+  expect(button).not.toBeDisabled()
   expect(UserService.signup).toHaveBeenCalledWith({
     username: 'abid',
     password: '12345678',
