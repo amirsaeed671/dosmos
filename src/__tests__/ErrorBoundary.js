@@ -16,18 +16,12 @@ beforeAll(() => {
 })
 
 test('error boundary should handle errors and show stack trace in browser', () => {
-  const {container, rerender, getByTestId, queryByRole} = render(
-    <ErrorBoundary>
-      <Bomb />
-    </ErrorBoundary>,
-  )
+  const {container, rerender, getByTestId, queryByRole} = render(<Bomb />, {
+    wrapper: ErrorBoundary,
+  })
   expect(queryByRole('alert')).not.toBeInTheDocument()
   expect(container.firstChild).toMatchInlineSnapshot(`<div />`)
-  rerender(
-    <ErrorBoundary>
-      <Bomb shouldThrow={true} />
-    </ErrorBoundary>,
-  )
+  rerender(<Bomb shouldThrow={true} />)
   expect(queryByRole('alert').textContent).toMatchInlineSnapshot(
     `"Something went wrong."`,
   )
