@@ -1,6 +1,6 @@
 import React from 'react'
 import {Redirect, BrowserRouter as Router} from 'react-router-dom'
-import Layout from 'layout'
+import Layout from 'common/layout'
 import {waitFor} from '@testing-library/dom'
 import {render, act} from '@testing-library/react'
 import UserService from 'user'
