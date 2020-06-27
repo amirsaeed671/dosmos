@@ -1,6 +1,6 @@
 import React from 'react'
 import Form from 'login/form'
-import Login from 'login'
+import Login from 'auth/login'
 import userEvent from '@testing-library/user-event'
 import {axe} from 'jest-axe'
 import {render} from 'auth-test-utils'

@@ -1,6 +1,6 @@
 import React from 'react'
 import Form from 'signup/form'
-import Signup from 'signup'
+import Signup from 'auth/signup'
 import userEvent from '@testing-library/user-event'
 import {axe} from 'jest-axe'
 import {render} from 'auth-test-utils'

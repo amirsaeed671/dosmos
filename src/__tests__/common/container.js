@@ -1,6 +1,6 @@
 import React from 'react'
 import {render} from '@testing-library/react'
-import Container from 'container'
+import Container from 'common/container'
 
 test('container snapshot should match', () => {
   const {container} = render(
