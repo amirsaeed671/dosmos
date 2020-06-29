@@ -3,7 +3,7 @@ import Form from 'login/form'
 import Login from 'auth/login'
 import userEvent from '@testing-library/user-event'
 import {axe} from 'jest-axe'
-import {render} from 'auth-test-utils'
+import {render as renderRTL} from 'auth-test-utils'
 import {removeUser} from 'auth'
 import UserService from 'user'
 
@@ -13,6 +13,22 @@ jest.mock('user', () => ({
     login: jest.fn(),
   },
 }))
+
+function render(ui, options) {
+  const utils = renderRTL(ui, options)
+  const usernameInput = utils.getByLabelText(/username/i)
+  const passwordInput = utils.getByLabelText(/password/i)
+  const submitButton = utils.getByTestId('submit-button')
+  const signupButton = utils.getByTestId('signup-button')
+
+  return {
+    ...utils,
+    usernameInput,
+    passwordInput,
+    submitButton,
+    signupButton,
+  }
+}
 
 afterEach(() => {
   jest.resetAllMocks()
@@ -27,10 +43,9 @@ test('it should handle the resonse of the api', async () => {
     message: 'User logged in',
     status: 200,
   })
-  const {getByLabelText, getByTestId, findByRole} = render(<Login />)
-  const usernameInput = getByLabelText(/username/i)
-  const passwordInput = getByLabelText(/password/i)
-  const submitButton = getByTestId('submit-button')
+  const {usernameInput, passwordInput, submitButton, findByRole} = render(
+    <Login />,
+  )
 
   await userEvent.type(usernameInput, 'abid')
   await userEvent.type(passwordInput, '12345678')
@@ -52,13 +67,11 @@ test('it should handle the resonse of the api', async () => {
 test('it should change the form inputs and submit the form with data', async () => {
   const handleSubmit = jest.fn(() => {})
 
-  const {getByTestId} = render(<Form onSubmit={handleSubmit} />)
-  const submitButton = getByTestId('submit-button')
-  const signupButton = getByTestId('signup-button')
-  const userNameInput = getByTestId('username')
-  const passwordInput = getByTestId('password')
+  const {signupButton, submitButton, usernameInput, passwordInput} = render(
+    <Form onSubmit={handleSubmit} />,
+  )
 
-  await userEvent.type(userNameInput, 'abid')
+  await userEvent.type(usernameInput, 'abid')
   await userEvent.type(passwordInput, '1234')
   userEvent.click(submitButton)
 
@@ -69,7 +82,7 @@ test('it should change the form inputs and submit the form with data', async () 
   })
   expect(submitButton).toHaveTextContent(/login/i)
   expect(signupButton).toHaveTextContent(/signup/i)
-  expect(userNameInput.value).toBe('abid')
+  expect(usernameInput.value).toBe('abid')
   expect(passwordInput.value).toBe('1234')
 })
 
