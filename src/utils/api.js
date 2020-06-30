@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {getUser, isLoggedIn} from 'auth'
 
-const baseURL = process.env.REACT_APP_BASE_URL
+const baseURL = 'https://dosmos-backend.herokuapp.com/'
 
 const axiosInstance = axios.create({baseURL})
 
