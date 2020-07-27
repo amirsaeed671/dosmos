@@ -1,5 +1,4 @@
 const webpack = require('webpack')
-const DotEnv = require('dotenv-webpack');
 
 module.exports = () => ({
     module: {
@@ -12,7 +11,6 @@ module.exports = () => ({
     },
     devtool: false,
     plugins: [
-        new DotEnv(),
         new webpack.SourceMapDevToolPlugin({})
     ],
     devServer: {
