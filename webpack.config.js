@@ -1,9 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackMerge = require('webpack-merge');
+const DotEnv = require('dotenv-webpack');
 
 const modeConfig = env => require(`./build-utils/webpack.${env}`)(env);
 const presetsConfig = require('./build-utils/loadPresets');
+const webpack = require('webpack');
 
 module.exports = ({mode, presets} = {mode: 'production', presets: [] }) => {
     return webpackMerge(
@@ -46,7 +48,9 @@ module.exports = ({mode, presets} = {mode: 'production', presets: [] }) => {
                 new HtmlWebpackPlugin({
                     template: path.resolve(__dirname, 'public/index.html'),
                     filename: 'index.html',
-                })
+                }),
+                new DotEnv(),
+                new webpack.EnvironmentPlugin(['BASE_URL'])
             ]
         },
         modeConfig(mode),
